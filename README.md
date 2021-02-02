@@ -3,7 +3,7 @@
 Repository for the paper [Generating images from caption and vice versa via CLIP-Guided Generative Latent Space Search]()
 
 
-### **An in-browser demo is available [here]()**
+### **An in-browser demo is available [here](https://colab.research.google.com/drive/1fWka_U56NhCegbbrQPt4PWpHPtNRdU49?usp=sharing)**
 
 
 ## Installation
