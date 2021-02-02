@@ -1,0 +1,8 @@
+/env
+__pycache__/
+/tmp
+
+/stylegan2/weights
+/gpt2/weights/gpt2-pytorch_model.bin
+
+/.vscode
