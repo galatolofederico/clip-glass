@@ -34,11 +34,11 @@ Specifying `<config>` and `<target>` according to the following table:
 |        config        |                                   meaning                                  | target type |
 |:--------------------:|:--------------------------------------------------------------------------:|:-----------:|
 |         GPT2         |                  Use GPT2 to solve the Image-to-Text task                  |    Image    |
-|   StyleGAN2_ffhq_d   |    Use StyleGAN2-ffhq with Discriminator to solve the Text-to-Image task   |     Text    |
+|   StyleGAN2_ffhq_d   |             Use StyleGAN2-ffhq to solve the Text-to-Image task             |     Text    |
 |  StyleGAN2_ffhq_nod  |  Use StyleGAN2-ffhq without Discriminator to solve the Text-to-Image task  |     Text    |
-|  StyleGAN2_church_d  | Use StyleGAN2-church without Discriminator to solve the Text-to-Image task |     Text    |
+|  StyleGAN2_church_d  |            Use StyleGAN2-church to solve the Text-to-Image task            |     Text    |
 | StyleGAN2_church_nod | Use StyleGAN2-church without Discriminator to solve the Text-to-Image task |     Text    |
-|    StyleGAN2_car_d   |   Use StyleGAN2-car without Discriminator to solve the Text-to-Image task  |     Text    |
+|    StyleGAN2_car_d   |              Use StyleGAN2-car to solve the Text-to-Image task             |     Text    |
 |   StyleGAN2_car_nod  |   Use StyleGAN2-car without Discriminator to solve the Text-to-Image task  |     Text    |
 
 
