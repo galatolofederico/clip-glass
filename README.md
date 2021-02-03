@@ -1,6 +1,6 @@
 # CLIP-GLaSS
 
-Repository for the paper [Generating images from caption and vice versa via CLIP-Guided Generative Latent Space Search]()
+Repository for the paper [Generating images from caption and vice versa via CLIP-Guided Generative Latent Space Search](https://arxiv.org/abs/2102.01645)
 
 
 ### **An in-browser demo is available [here](https://colab.research.google.com/drive/1fWka_U56NhCegbbrQPt4PWpHPtNRdU49?usp=sharing)**
