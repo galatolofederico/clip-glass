@@ -28,12 +28,13 @@ configs = dict(
             xu = 50256
         )
     ),
-    DeepMindBigGAN = dict(
+    DeepMindBigGAN256 = dict(
         task = "txt2img",
         dim_z = 128,
         num_classes = 1000,
         latent = DeepMindBigGANLatentSpace,
         model = DeepMindBigGAN,
+        weights = "biggan-deep-256",
         use_discriminator = False,
         algorithm = "ga",
         norm = biggan_norm,
@@ -41,6 +42,28 @@ configs = dict(
         truncation = 1.0,
         pop_size = 64,
         batch_size = 32,
+        problem_args = dict(
+            n_var = 128 + 1000,
+            n_obj = 1,
+            n_constr = 128,
+            xl = -2,
+            xu = 2
+        )
+    ),
+    DeepMindBigGAN512 = dict(
+        task = "txt2img",
+        dim_z = 128,
+        num_classes = 1000,
+        latent = DeepMindBigGANLatentSpace,
+        model = DeepMindBigGAN,
+        weights = "biggan-deep-512",
+        use_discriminator = False,
+        algorithm = "ga",
+        norm = biggan_norm,
+        denorm = biggan_denorm,
+        truncation = 1.0,
+        pop_size = 32,
+        batch_size = 8,
         problem_args = dict(
             n_var = 128 + 1000,
             n_obj = 1,

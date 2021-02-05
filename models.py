@@ -66,7 +66,7 @@ class DeepMindBigGAN(torch.nn.Module):
     def __init__(self, config):
         super(DeepMindBigGAN, self).__init__()
         self.config = config
-        self.G = DMBigGAN.from_pretrained("biggan-deep-256")
+        self.G = DMBigGAN.from_pretrained(config.weights)
         self.D = None
 
     def has_discriminator(self):

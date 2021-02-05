@@ -35,11 +35,11 @@ class BinaryRandomSampling(Sampling):
 
 
 def get_operators(config):
-    if config.config == "DeepMindBigGAN":
+    if config.config == "DeepMindBigGAN256" or config.config == "DeepMindBigGAN512":
         mask = ["real"]*config.dim_z + ["bool"]*config.num_classes
         
         real_sampling = None
-        if config.config == "DeepMindBigGAN":
+        if config.config == "DeepMindBigGAN256" or config.config == "DeepMindBigGAN512":
             real_sampling = TruncatedNormalRandomSampling()
 
         sampling = MixedVariableSampling(mask, {
