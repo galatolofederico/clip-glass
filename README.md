@@ -31,9 +31,11 @@ python run.py --config <config> --target <target>
 
 Specifying `<config>` and `<target>` according to the following table:
 
-|        config        |                                   meaning                                  | target type |
+|        Config        |                                   Meaning                                  | Target Type |
 |:--------------------:|:--------------------------------------------------------------------------:|:-----------:|
 |         GPT2         |                  Use GPT2 to solve the Image-to-Text task                  |    Image    |
+|   DeepMindBigGAN512  |        Use DeepMind's BigGAN 512x512 to solve the Text-to-Image task       |     Text    |
+|   DeepMindBigGAN256  |        Use DeepMind's BigGAN 256x256 to solve the Text-to-Image task       |     Text    |
 |   StyleGAN2_ffhq_d   |             Use StyleGAN2-ffhq to solve the Text-to-Image task             |     Text    |
 |  StyleGAN2_ffhq_nod  |  Use StyleGAN2-ffhq without Discriminator to solve the Text-to-Image task  |     Text    |
 |  StyleGAN2_church_d  |            Use StyleGAN2-church to solve the Text-to-Image task            |     Text    |
