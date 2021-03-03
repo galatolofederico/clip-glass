@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 1 ]; then
     echo "./download-weights.sh <model>"
-    echo "Possibile <model> are: StyleGAN2-ffhq, StyleGAN2-church, StyleGAN2-car, GPT2"
+    echo "Possibile <model> are: StyleGAN2-ffhq, StyleGAN2-church, StyleGAN2-car, GPT2, DALLE"
     echo "Example:"
     echo "./download-weights.sh StyleGAN2-ffhq"
     exit
@@ -35,6 +35,10 @@ case $1 in
     "GPT2")
         [ -f "gpt2/weights/gpt2-pytorch_model.bin" ] && die "Weights already downloaded" 
         curl --output gpt2/weights/gpt2-pytorch_model.bin https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-pytorch_model.bin
+        ;;
+    "DALLE")
+        [ -f "dalle/weights/decoder.pkl" ] && die "Weights already downloaded" 
+        curl --output dalle/weights/decoder.pkl https://cdn.openai.com/dall-e/decoder.pkl
         ;;
     *)
         echo "Unknown model '$1'"

@@ -77,6 +77,14 @@ def get_operators(config):
             mutation=get_mutation("int_pm", prob=0.5, eta=3.0)
         )
 
+    elif config.config == "DALLE":
+        return dict(
+            sampling=get_sampling("int_random"),
+            crossover=get_crossover("int_sbx", prob=1.0, eta=3.0),
+            mutation=get_mutation("int_pm", prob=1.0, eta=3.0)
+        )
+
+
     else:
         raise Exception("Unknown config")
 

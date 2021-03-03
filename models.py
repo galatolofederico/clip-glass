@@ -1,6 +1,7 @@
 import os
 import sys
 import torch
+import torch.nn.functional as F
 from pytorch_pretrained_biggan import BigGAN as DMBigGAN
 import stylegan2
 
@@ -10,6 +11,7 @@ from gpt2.config import GPT2Config
 from gpt2.sample import sample_sequence
 from gpt2.encoder import get_encoder
 
+from dall_e.utils import unmap_pixels
 
 class GPT2(torch.nn.Module):
     def __init__(self, config):
@@ -128,3 +130,34 @@ class StyleGAN2(torch.nn.Module):
                 discriminations.append(self.D(images_minibatch))
             discriminations = torch.cat(discriminations)
             return discriminations
+
+
+
+class DALLE(torch.nn.Module):
+    def __init__(self, config):
+        super(DALLE, self).__init__()
+        if not os.path.exists(config.weights):
+            print("Weights not found!\nRun : ./download-weights.sh DALLE")
+            sys.exit(1)
+        self.config = config
+        self.decoder = torch.load(open(config.weights, "rb"), map_location=config.device)
+
+    def has_discriminator(self):
+        return False
+    
+    def generate(self, z, minibatch = None):
+        if minibatch is None:
+            z = F.one_hot(z, num_classes=self.config.vocab_size).permute(0, 3, 1, 2).float()
+            x_stats = self.decoder(z_minibatch).float()
+            return unmap_pixels(torch.sigmoid(x_stats[:, :3]))
+        else:
+            assert z.shape[0] % minibatch == 0
+            gen_images = []
+            for i in range(0, z.shape[0] // minibatch):
+                z_minibatch = z[i*minibatch:(i+1)*minibatch, :]
+                z_minibatch = F.one_hot(z_minibatch, num_classes=self.config.vocab_size).permute(0, 3, 1, 2).float()
+                x_stats = self.decoder(z_minibatch).float()
+                gen_images.append(unmap_pixels(torch.sigmoid(x_stats[:, :3])))
+            gen_images = torch.cat(gen_images)
+            return gen_images
+    

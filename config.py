@@ -1,5 +1,5 @@
-from models import DeepMindBigGAN, StyleGAN2, GPT2
-from latent import DeepMindBigGANLatentSpace, StyleGAN2LatentSpace, GPT2LatentSpace
+from models import DeepMindBigGAN, StyleGAN2, GPT2, DALLE
+from latent import DeepMindBigGANLatentSpace, StyleGAN2LatentSpace, GPT2LatentSpace, DALLELatentSpace
 from utils import biggan_norm, biggan_denorm
 
 configs = dict(
@@ -191,7 +191,26 @@ configs = dict(
             xl = -10,
             xu = 10
         )
-    )
+    ),
+    DALLE = dict(
+        task = "txt2img",
+        dim_z = (32, 32),
+        vocab_size = 8192,
+        latent = DALLELatentSpace,
+        model = DALLE,
+        weights = "./dall_e/weights/decoder.pkl",
+        use_discriminator = False,
+        algorithm = "ga",
+        pop_size = 64,
+        batch_size = 16,
+        problem_args = dict(
+            n_var = 32*32,
+            n_obj = 1,
+            n_constr = 32*32,
+            xl = 0,
+            xu = 8191
+        )
+    ),
 )
 
 

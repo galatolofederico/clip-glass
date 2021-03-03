@@ -4,5 +4,7 @@ __pycache__/
 
 /stylegan2/weights
 /gpt2/weights/gpt2-pytorch_model.bin
+/dall_e/weights/*
+!/dall_e/weights/.gitkeep
 
 /.vscode
