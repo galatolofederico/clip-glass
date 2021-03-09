@@ -13,7 +13,7 @@ class Generator:
         self.config = config
         self.augmentation = None
 
-        self.CLIP, clip_preprocess = clip.load("ViT-B/32", device=self.config.device)
+        self.CLIP, clip_preprocess = clip.load("ViT-B/32", device=self.config.device, jit=False)
         self.CLIP = self.CLIP.eval()
         freeze_model(self.CLIP)
         self.model = self.config.model(config).to(self.config.device).eval()
