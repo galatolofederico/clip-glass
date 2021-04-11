@@ -66,7 +66,7 @@ This work heavily relies on the following amazing repositories and would have no
 
 All their work can be shared under the terms of the respective original licenses.
 
-All my original work (everything except the content of the folders `clip`, `stylegan2` and `gpt2`) is released under the terms of the [GNU/GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license. Coping, adapting e republishing it is not only consent but also encouraged. 
+All my original work (everything except the content of the folders `clip`, `stylegan2` and `gpt2`) is released under the terms of the [GNU/GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license. Copying, adapting e republishing it is not only consent but also encouraged. 
 
 ## Citing
 
