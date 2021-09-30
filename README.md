@@ -73,10 +73,16 @@ All my original work (everything except the content of the folders `clip`, `styl
 If you want to cite use you can use this BibTeX
 
 ```
-@article{galatolo_glass
-,	author	= {Galatolo, Federico A and Cimino, Mario GCA and Vaglini, Gigliola}
-,	title	= {Generating images from caption and vice versa via CLIP-Guided Generative Latent Space Search}
-,	year	= {2021}
+@article{generating2021,
+    author={Federico Galatolo. and  Mario Cimino. and  Gigliola Vaglini},
+    title={Generating Images from Caption and Vice Versa via CLIP-Guided Generative Latent Space Search},
+    journal={Proceedings of the International Conference on Image Processing and Vision Engineering},
+    year={2021},
+    volume={},
+    pages={},
+    publisher={SCITEPRESS - Science and Technology Publications},
+    doi={10.5220/0010503701660174},
+    issn={},
 }
 ```
 
